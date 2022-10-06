@@ -1,6 +1,6 @@
 #!/bin/bash
 # echo off
-exec > /dev/null 2>&1
+# exec > /dev/null 2>&1
 
 # Compile C++ code
 
@@ -11,16 +11,17 @@ exec > /dev/null 2>&1
 mkdir -p  build
 cd build
 
+printf "\n"
 g++ -std=c++11 -o $1 ../$1.cpp
 
 # print Compiled successfully message if no errors
-if [ $? -eq 0 ]; then
-    echo "Compiled successfully!"
-fi
+# if [ $? -eq 0 ]; then
+#     echo "Compiled successfully!"
+# fi
 
 # Run the program
-# ./main
-# printf "\n"
+./$1
+printf "\n"
 
 # Remove the executable file
 # cd ..
